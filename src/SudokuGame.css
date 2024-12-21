@@ -1,0 +1,355 @@
+.sudoku-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sudoku-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .sudoku-title {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .sudoku-header-buttons .btn {
+    margin-left: 1rem;
+  }
+  
+  .sudoku-main {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    padding: 1rem;
+    gap: 2rem;
+  }
+  
+  .sudoku-board {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  }
+  
+  .sudoku-row {
+    display: flex;
+  }
+  
+  .sudoku-cell {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #fafafa;
+  }
+  
+  .sudoku-cell:nth-child(3n) {
+    border-right: 2px solid #424242;
+  }
+  
+  .sudoku-row:nth-child(3n) .sudoku-cell {
+    border-bottom: 2px solid #424242;
+  }
+  
+  /* We'll define .selected, .filled backgrounds within the theme classes */
+  .selected {
+  }
+  .filled {
+  }
+  
+  .sudoku-sidebar {
+    width: 220px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .sidebar-label {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .time-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .difficulty-label {
+    font-size: 1rem;
+  }
+  
+  .remaining-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .remaining-cell {
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+    transition: background 0.2s;
+  }
+  
+  .remaining-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .remaining-count {
+    font-size: 0.8rem;
+  }
+  
+  .btn {
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+  }
+  
+  /* ------------------------
+     BLUE THEME
+  ------------------------- */
+  .blue-theme {
+    background: #f4f4f4;
+  }
+  .blue-theme .sudoku-header {
+    background: #3f51b5; 
+    color: white;
+  }
+  .blue-theme .time-display {
+    color: #3f51b5;
+  }
+  .blue-theme .difficulty-label {
+    color: #3f51b5;
+  }
+  .blue-theme .remaining-cell {
+    background: #3f51b5;
+    color: white;
+  }
+  .blue-theme .remaining-cell:hover {
+    background: #31419b;
+  }
+  .blue-theme .btn {
+    background: #303f9f;
+    color: #fff;
+  }
+  .blue-theme .btn:hover {
+    background: #283693;
+  }
+  .blue-theme .selected {
+    background: #e3f2fd; 
+  }
+  .blue-theme .filled {
+    background-color: #e8f0fe;
+  }
+  
+  /* ------------------------
+     YELLOW THEME
+  ------------------------- */
+  .yellow-theme {
+    background: #fffde7;
+  }
+  .yellow-theme .sudoku-header {
+    background: #ffca28; 
+    color: #212121;
+  }
+  .yellow-theme .time-display {
+    color: #ffca28;
+  }
+  .yellow-theme .difficulty-label {
+    color: #ffa000;
+  }
+  .yellow-theme .remaining-cell {
+    background: #ffc107;
+    color: #212121;
+  }
+  .yellow-theme .remaining-cell:hover {
+    background: #ffb300;
+  }
+  .yellow-theme .btn {
+    background: #ffd740;
+    color: #212121;
+  }
+  .yellow-theme .btn:hover {
+    background: #ffc400;
+  }
+  .yellow-theme .selected {
+    background: #fff59d; 
+  }
+  .yellow-theme .filled {
+    background-color: #fff9c4;
+  }
+  
+  /* ------------------------
+     PURPLE THEME
+  ------------------------- */
+  .purple-theme {
+    background: #f8f0fb;
+  }
+  .purple-theme .sudoku-header {
+    background: #8e24aa; 
+    color: white;
+  }
+  .purple-theme .time-display {
+    color: #8e24aa;
+  }
+  .purple-theme .difficulty-label {
+    color: #8e24aa;
+  }
+  .purple-theme .remaining-cell {
+    background: #9c27b0;
+    color: #fff;
+  }
+  .purple-theme .remaining-cell:hover {
+    background: #7b1fa2;
+  }
+  .purple-theme .btn {
+    background: #7b1fa2;
+    color: #fff;
+  }
+  .purple-theme .btn:hover {
+    background: #6a1b9a;
+  }
+  .purple-theme .selected {
+    background: #f3e5f5;
+  }
+  .purple-theme .filled {
+    background-color: #ede7f6;
+  }
+  
+  /* ------------------------
+     PINK THEME
+  ------------------------- */
+  .pink-theme {
+    background: #fde0e0;
+  }
+  .pink-theme .sudoku-header {
+    background: #e91e63; 
+    color: white;
+  }
+  .pink-theme .time-display {
+    color: #e91e63;
+  }
+  .pink-theme .difficulty-label {
+    color: #c2185b;
+  }
+  .pink-theme .remaining-cell {
+    background: #ec407a; 
+    color: #fff;
+  }
+  .pink-theme .remaining-cell:hover {
+    background: #d81b60; 
+  }
+  .pink-theme .btn {
+    background: #d81b60;
+    color: #fff;
+  }
+  .pink-theme .btn:hover {
+    background: #c2185b;
+  }
+  .pink-theme .selected {
+    background: #f8bbd0;
+  }
+  .pink-theme .filled {
+    background-color: #fce4ec;
+  }
+  
+  /* ------------------------
+     RED THEME
+  ------------------------- */
+  .red-theme {
+    background: #fdecea;
+  }
+  .red-theme .sudoku-header {
+    background: #f44336; 
+    color: white;
+  }
+  .red-theme .time-display {
+    color: #f44336;
+  }
+  .red-theme .difficulty-label {
+    color: #d32f2f;
+  }
+  .red-theme .remaining-cell {
+    background: #f44336; 
+    color: #fff;
+  }
+  .red-theme .remaining-cell:hover {
+    background: #e53935;
+  }
+  .red-theme .btn {
+    background: #d32f2f;
+    color: #fff;
+  }
+  .red-theme .btn:hover {
+    background: #c62828;
+  }
+  .red-theme .selected {
+    background: #ffebee;
+  }
+  .red-theme .filled {
+    background-color: #ffcdd2;
+  }
+  
+  /* ------------------------
+     ORANGE THEME
+  ------------------------- */
+  .orange-theme {
+    background: #fff3e0;
+  }
+  .orange-theme .sudoku-header {
+    background: #ff9800; 
+    color: #212121;
+  }
+  .orange-theme .time-display {
+    color: #ff9800;
+  }
+  .orange-theme .difficulty-label {
+    color: #ff9800;
+  }
+  .orange-theme .remaining-cell {
+    background: #ffa726; 
+    color: #212121;
+  }
+  .orange-theme .remaining-cell:hover {
+    background: #fb8c00;
+  }
+  .orange-theme .btn {
+    background: #fb8c00;
+    color: #fff;
+  }
+  .orange-theme .btn:hover {
+    background: #f57c00;
+  }
+  .orange-theme .selected {
+    background: #ffe0b2;
+  }
+  .orange-theme .filled {
+    background-color: #ffecb3;
+  }
+  
